@@ -1,0 +1,11 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+#Symfony verweist automatisch auf die Backend Routen
+#durch die Funktion "pageNotFoundAction wird jede Seite, die Symfony nicht kennt auf die Startseite verwiesen
+
+pageNotFound:
+  path: /{path}
+  defaults: { _controller: App\Controller\DefaultController:pageNotFoundAction, path: '' }
+  requirements:
+    path: .*
